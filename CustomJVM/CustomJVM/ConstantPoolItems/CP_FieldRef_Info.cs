@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CustomJVM.ConstantPoolItems
+{
+    public class CP_FieldRef_Info : CP_Info
+    {
+        public override ConstantPoolTags Tag => ConstantPoolTags.CP_FieldRef_Info;
+
+        public ushort Class_Index { get; private set; }
+        public ushort Name_And_Type_Index { get; private set; }
+
+        public override void Parse(ref Memory<byte> hexdump)
+        {
+            Class_Index = hexdump.Read2();
+            Name_And_Type_Index = hexdump.Read2();
+        }
+    }
+}
