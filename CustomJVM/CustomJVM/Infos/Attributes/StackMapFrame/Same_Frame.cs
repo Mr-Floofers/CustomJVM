@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace CustomJVM.Infos.Attributes.StackMapFrame
 {
-    public struct Same_Frame
+    public class Same_Frame : Stack_Map_Frame
     {
-        public FrameTypes Frame_Type => FrameTypes.SAME;
+        
     }
 }

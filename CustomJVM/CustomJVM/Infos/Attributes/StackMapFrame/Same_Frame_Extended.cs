@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace CustomJVM.Infos.Attributes.StackMapFrame
 {
-    public struct Same_Frame_Extended
+    public class Same_Frame_Extended : Stack_Map_Frame
     {
-        public FrameTypes Frame_Type => FrameTypes.SAME_FRAME_EXTENDED; /* 251 */
-        public ushort Offset_Delta;
+        public ushort Offset_Delta { get; private set; }
+
+        public override void Parse(ref Memory<byte> hexdump)
+        {
+            base.Parse(ref hexdump);
+            Offset_Delta = hexdump.Read2();
+        }
     }
 }

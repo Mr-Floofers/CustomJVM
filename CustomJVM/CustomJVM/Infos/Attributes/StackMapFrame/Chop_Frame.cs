@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace CustomJVM.Infos.Attributes.StackMapFrame
 {
-    public struct Chop_Frame
+    public class Chop_Frame : Stack_Map_Frame
     {
-        public FrameTypes Frame_Type => FrameTypes.CHOP; /* 248-250 */
-        public ushort Offset_Delta;
+        public ushort Offset_Delta { get; private set; }
+
+        public override void Parse(ref Memory<byte> hexdump)
+        {
+            base.Parse(ref hexdump);
+            Offset_Delta = hexdump.Read2();
+        }
     }
 }

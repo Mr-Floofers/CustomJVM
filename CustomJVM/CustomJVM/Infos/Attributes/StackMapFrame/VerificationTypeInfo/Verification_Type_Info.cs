@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace CustomJVM.Infos.Attributes.StackMapFrame.VerificationTypeInfo
 {
-    [StructLayout(LayoutKind.Explicit, Pack = 1)]
-    public struct Verification_Type_Info
+    public abstract class Verification_Type_Info
     {
         //[FieldOffset(0)]
         //public Top_Variable_Info Top_Variable_Info;
