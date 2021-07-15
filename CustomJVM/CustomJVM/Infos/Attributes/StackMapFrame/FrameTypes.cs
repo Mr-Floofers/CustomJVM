@@ -24,7 +24,7 @@ namespace CustomJVM.Infos.Attributes.StackMapFrame
         SAME,
 
         [Range(64, 127)]
-        SAME_LOCALS_1_STACK_ITEM,
+        SAME_LOCALS_1_STACK_ITEM,   
 
         [Range(247)]
         SAME_LOCALS_1_STACK_ITEM_EXTENDED,
@@ -40,5 +40,14 @@ namespace CustomJVM.Infos.Attributes.StackMapFrame
 
         [Range(255)]
         FULL_FRAME
+    }
+
+    public class FrameType
+    {
+        FrameTypes frameType;
+        public static explicit operator int(FrameType frameType)
+        {
+            
+        }
     }
 }

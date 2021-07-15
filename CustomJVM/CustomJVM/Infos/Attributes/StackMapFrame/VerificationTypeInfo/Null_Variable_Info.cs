@@ -2,12 +2,7 @@
 
 namespace CustomJVM.Infos.Attributes.StackMapFrame.VerificationTypeInfo
 {
-    public struct Null_Variable_Info
+    public class Null_Variable_Info : Verification_Type_Info
     {
-        public VerificationTypeTags Tag => VerificationTypeTags.ITEM_Null;
-        public void Parse(ref Memory<byte> hexdump)
-        {
-
-        }
     }
 }

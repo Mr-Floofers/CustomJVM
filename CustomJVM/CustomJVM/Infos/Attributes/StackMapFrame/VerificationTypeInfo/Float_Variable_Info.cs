@@ -2,12 +2,7 @@
 
 namespace CustomJVM.Infos.Attributes.StackMapFrame.VerificationTypeInfo
 {
-    public struct Float_Variable_Info
-    {
-        public VerificationTypeTags Tag => VerificationTypeTags.ITEM_Float;
-        public void Parse(ref Memory<byte> hexdump)
-        {
-
-        }
+    public class Float_Variable_Info : Verification_Type_Info
+    { 
     }
 }

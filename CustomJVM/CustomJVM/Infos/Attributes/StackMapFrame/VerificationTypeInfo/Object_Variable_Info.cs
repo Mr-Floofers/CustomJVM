@@ -2,13 +2,13 @@
 
 namespace CustomJVM.Infos.Attributes.StackMapFrame.VerificationTypeInfo
 {
-    public struct Object_Variable_Info
+    public class Object_Variable_Info : Verification_Type_Info
     {
-        public VerificationTypeTags Tag => VerificationTypeTags.ITEM_Object;
         public ushort CPool_Index { get; private set; }
-        public void Parse(ref Memory<byte> hexdump)
+        public override void Parse(ref Memory<byte> hexdump)
         {
-
+            base.Parse(ref hexdump);
+            CPool_Index = hexdump.Read2();
         }
     }
 }
